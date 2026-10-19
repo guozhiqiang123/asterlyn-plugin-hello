@@ -34,6 +34,14 @@ jobs:
           ASTERLYN_HOST_CHECKOUT: ${{ github.workspace }}/.asterlyn-host
           ASTERLYN_HOST_VERSION: 0.1.12
         run: npm run verify
+      - name: Verify isolated installed runtime
+        run: |
+          set -- release/*.asterlyn-plugin.tgz
+          test "$#" -eq 1
+          ASTERLYN_HELLO_PLUGIN_PACKAGE="$(realpath "$1")" \
+          ASTERLYN_HELLO_PLUGIN_VERSION="$(node -p "require('./package.json').version")" \
+          ASTERLYN_HOST_VERSION="0.1.12" \
+          cargo test --manifest-path .asterlyn-host/Cargo.toml -p asterlyn-plugin-host --test hello_release_parity -- --ignored
       - name: Publish one inspected package
         uses: softprops/action-gh-release@a06a81a03ee405af7f2048a818ed3f03bbf83c7b # v2.5.0
         with:
