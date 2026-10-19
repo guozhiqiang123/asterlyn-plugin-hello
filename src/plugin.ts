@@ -9,7 +9,7 @@ export const HELLO_PLUGIN_ID = "dev.asterlyn.hello";
 export const HELLO_PLUGIN_MANIFEST: SdkPluginManifest = Object.freeze({
   sdkMajor: 1,
   id: HELLO_PLUGIN_ID,
-  version: "0.1.0",
+  version: "0.1.1",
   nameKey: "name",
   descriptionKey: "description",
   localization: Object.freeze({
