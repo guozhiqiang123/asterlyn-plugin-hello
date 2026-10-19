@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 2,
+  "sdkMajor": 1,
+  "id": "dev.asterlyn.hello",
+  "version": "0.1.0",
+  "nameKey": "name",
+  "descriptionKey": "description",
+  "localization": {
+    "defaultLocale": "en-US",
+    "locales": {
+      "en-US": {
+        "name": "Hello",
+        "description": "A minimal independently released Asterlyn command plugin."
+      },
+      "zh-CN": {
+        "name": "Hello",
+        "description": "一个独立发布的最小 Asterlyn 命令插件。"
+      }
+    }
+  },
+  "settings": [],
+  "capabilities": [],
+  "permissions": [],
+  "distribution": {
+    "repository": "guozhiqiang123/asterlyn-plugin-hello",
+    "runtime": {
+      "protocol": 1,
+      "entry": "runtime/plugin.js"
+    },
+    "hostCompatibility": {
+      "minimum": "0.1.11",
+      "maximumExclusive": "0.2.0"
+    },
+    "license": {
+      "expression": "MIT",
+      "file": "LICENSE"
+    },
+    "integrity": {}
+  }
+}
